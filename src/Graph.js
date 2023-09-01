@@ -6,34 +6,21 @@ const Graph = () => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
   const [shouldRefetch, setShouldRefetch] = useState(false)
-
-  // this useEffect runs once when the component mounts
+  const queryParams = {
+    base: 'USD',
+    start_date: '1997-03-03',
+    end_date: '1998-03-03'
+  }
+  // this useEffect runs once when the component mounts\
   useEffect(() => {
-    setLoading(true)
-    fetch(getRequestURL('latest'))
-      .then((response) => {
-        setLoading(false)
-        setData(response.data)
-        console.log('fetched from initial load')
-        console.log(response)
-      })
-      .catch(err => {
-        setError(err)
-        console.error(err)
-      })
-  })
-
-  // this useEffect runs when the piece of state 'refetch' changes and also on initial load but ONLY IF shouldRefetch is already true
-  useEffect(() => {
-    if (shouldRefetch) {
+    if (shouldRefetch){
       setShouldRefetch(false)
       setLoading(true)
-      setError(null)
-      fetch(getRequestURL('latest'))
+      fetch(getRequestURL('timeseries',queryParams))
         .then((response) => {
           setLoading(false)
           setData(response.data)
-          console.log('fetched from the button press')
+          console.log('fetched from initial load')
           console.log(response)
         })
         .catch(err => {
@@ -41,8 +28,7 @@ const Graph = () => {
           console.error(err)
         })
     }
-//This is called a 'dependency array' and when something in this array's value changes, this function gets run again
-  }, [shouldRefetch])
+  },[shouldRefetch])
   const refetch = () => setShouldRefetch(true)
   return  (
     <>

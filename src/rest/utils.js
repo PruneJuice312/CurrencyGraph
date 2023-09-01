@@ -11,9 +11,8 @@ const getParamStringFromObject = (queryParams) => {
 // This function returns a URL in the format given an endpoint and options
 // endpoint is a string, and queryParmas is an optional object that contains parameters for the fetch
 export const getRequestURL = (endpoint, queryParams) => {
-
   const queryParamString = queryParams != null 
     ? getParamStringFromObject(queryParams)
     : ''
-  return `${baseURL}/${endpoint}?apikey=${apiKey}${queryParamString}`
+  return `${baseURL}/${endpoint}?api_key=${apiKey}${queryParamString}`
 }
