@@ -1,12 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
-import Graph from './Graph';
+import Converter from './components/Converter/Converter';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Graph />
+        <Converter />
       </header>
     </div>
   );
