@@ -1,7 +1,9 @@
 // import { useEffect, useState } from 'react'
 // import { getRequestURL } from '../../rest/utils'
 
-const Graph = () => {
+import Graph from "./Graph"
+
+const GraphWrapper = () => {
   // const [data, setData] = useState(null)
   // const [loading, setLoading] = useState(false)
   // const [error, setError] = useState(null)
@@ -32,9 +34,9 @@ const Graph = () => {
   // const refetch = () => setShouldRefetch(true)
   return  (
     <>
-    {/* <Graph></Graph> */}
+    <Graph/>
     </>
      )
 }
 
-export default Graph
+export default GraphWrapper
