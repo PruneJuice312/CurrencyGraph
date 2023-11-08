@@ -5,7 +5,7 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { Box, Tab, Tabs } from '@mui/material';
-import Graph from './Graph';
+import Graph from './components/Graph/GraphWrapper';
 import { useState } from 'react';
 
 function App() {

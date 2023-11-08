@@ -9,6 +9,7 @@ const Converter = () => {
   const [error, setError] = useState(null)
   // I added this piece of state to hold the results of the conversion request.
   const [conversionAnswer, setConversionAnswer] = useState(null)
+  console.log(loading, error)
 
   useEffect(() => {
     const queryParams = {

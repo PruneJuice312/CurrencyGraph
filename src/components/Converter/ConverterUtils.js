@@ -6,6 +6,6 @@ const getFormattedAnswer = (conversionAnswer, currencyList) => {
   const { name: toName, symbol: toSymbol } = currencyList.find((currency) => {
     return currency.short_code === to
   })
-  return `${fromSymbol}${amount} ${fromName} is ${toSymbol}${value} ${toName}`
+  return `${fromSymbol}${amount} ${fromName} is ${toSymbol}${value.toFixed(2)} ${toName}`
 }
 export default getFormattedAnswer
